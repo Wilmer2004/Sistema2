@@ -1,2 +1,2 @@
 # Sistema2
-TRAKAS
+Grupo de Wilmer y Magdiel
