@@ -1,10 +1,127 @@
-<form action="submitAttendance" method="POST">
-    <label for="name">Nombre:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="timeIn">Hora de Entrada:</label>
-    <input type="time" id="timeIn" name="timeIn" required>
-    <label for="timeOut">Hora de Salida:</label>
-    <input type="time" id="timeOut" name="timeOut">
-    <button type="submit">Registrar</button>
-  </form>
-  
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Asistencia</title>
+    <style>
+        /* Estilos generales */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: url('https://hse.software/wp-content/uploads/2023/08/5-razones-por-las-que-el-sistema-de-gestion-de-registros-es-importante-en-la-gestion-HSE.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Estilos del contenedor principal */
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Título principal */
+        h1 {
+            font-size: 2.5rem;
+            color: red;
+            margin: 0;
+            font-weight: 600;
+            animation: bounceIn 1s ease-in-out;
+        }
+
+        /* Subtítulo */
+        h2 {
+            font-size: 1.1rem;
+            color: #333;
+            margin-top: 10px;
+            font-weight: 400;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Estilos del formulario */
+        form {
+            margin-top: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: darkred;
+        }
+
+        /* Animaciones */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Asistencia</h1>
+        <h2>Echo por Wilmer y Magdiel</h2>
+        
+        <!-- Formulario de Registro -->
+        <form action="form_handler.php" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="text" name="apellido" placeholder="Apellido" required>
+            <input type="text" name="dni" placeholder="DNI" required>
+            
+            <!-- Selección de tipo de usuario -->
+            <select name="tipo_usuario" required>
+                <option value="" disabled selected>Seleccione Tipo de Usuario</option>
+                <option value="estudiante">Estudiante</option>
+                <option value="profesor">Profesor</option>
+                <option value="administrativo">Administrativo</option>
+            </select>
+            
+            <!-- Botón de envío -->
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+</body>
+</html>
